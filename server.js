@@ -1,25 +1,11 @@
 const { ApolloServer, gql } = require('apollo-server');
+const mongoose = require('mongoose');
+require("dotenv").config({ path: 'variables.env'})
 
-const devs = [
-  {
-    id: 1,
-    language: 'Javascript',
-    typelanguage: 'Frontend',
-    testing: false
-  },
-  {
-    id: 2,
-    language: 'PHP',
-    typelanguage: 'Backend',
-    testing: false
-  },
-  {
-    id: 3,
-    language: 'Graphql',
-    typelanguage: 'Backend',
-    testing: true
-  },
-];
+mongoose
+  .connect(process.env.MONGO_URI, { useNewUrlParser: true })
+  .then(() => { console.log('DB connected')})
+  .catch(err => console.log(err));
 
 const typeDefs = gql`
   type Dev {
@@ -31,31 +17,10 @@ const typeDefs = gql`
   type Query {
     getDev: [Dev]
   }
-  type Mutation {
-    addDev(
-      language: String,
-      typelanguage: String,
-      testing: Boolean
-    ): Dev
-  }
 `;
 
-const resolvers = {
-  Query: {
-    getDev: () => devs
-  },
-  Mutation: {
-    addDev: (_, {language, typelanguage, testing }) => {
-      const dev = { language, typelanguage, testing };
-      devs.push(dev);
-      return dev;
-    }
-  }
-};
-
-
 const server = new ApolloServer({
-  typeDefs, resolvers
+  typeDefs
 });
 
 server.listen(process.env.PORT).then(({ url }) => {
