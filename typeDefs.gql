@@ -24,10 +24,11 @@ type Message {
   messagesBody: String!,
   messageDate: String,
   messagesUser: User!
-} 
+}
 
 type Query {
-  getUser: User
+  # getUser: User
+  getPosts: [Post]
 }
 
 type Mutation {
