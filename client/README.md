@@ -1,4 +1,4 @@
-# graphql-client
+# client
 
 ## Project setup
 ```
