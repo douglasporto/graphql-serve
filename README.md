@@ -5,11 +5,12 @@
 ## Run Setup
 
 ``` bash
-# install dependencies
+# Install Dependencies
 npm install
 
-# start serve
+# Start Serve
 npm run server
 
+# Start Serve and Client
+npm run dev
 ```
-
