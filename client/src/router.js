@@ -2,12 +2,12 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./components/Home.vue";
 
-import AddPost from './components/Posts/AddPost.vue';
-import Posts from './components/Posts/Posts.vue';
+import AddPost from './components/Posts/AddPost.vue'
+import Posts from './components/Posts/Posts.vue'
 
-import Profile from './components/Auth/Profile.vue';
-import Signin from './components/Auth/Signin.vue';
-import Signup from './components/Auth/Signup.vue';
+import Profile from './components/Auth/Profile.vue'
+import Signin from './components/Auth/Signin.vue'
+import Signup from './components/Auth/Signup.vue'
 
 Vue.use(Router);
 
@@ -26,7 +26,7 @@ export default new Router({
       component: Posts
     },
     {
-      path: "/posts/add",
+      path: "/post/add",
       name: "AddPost",
       component: AddPost
     },
@@ -41,9 +41,9 @@ export default new Router({
       component: Signin
     },
     {
-      path: "/signup",
+      path: "/Signup",
       name: "Signup",
       component: Signup
-    },
+    }
   ]
 });

@@ -1,15 +1,11 @@
 <template>
   <v-container>
-    <h1>add Posts</h1>
+    <h1>Add Post</h1>
   </v-container>
 </template>
 
 <script>
 export default {
-  name: 'addPost'
-}
+  name: "AddPost"
+};
 </script>
-
-<style>
-
-</style>

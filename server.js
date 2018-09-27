@@ -32,10 +32,11 @@ const server = new ApolloServer({
   }
 });
 
-server.listen(process.env.PORT).then(({ url }) => {
-  console.log(`Server Listening on ${url}`);
-});
 
-// server.listen().then(({ url }) => {
+// server.listen(4000).then(({ url }) => {
 //   console.log(`Server listening on ${url}`);
 // });
+
+server.listen(4000).then(({ url }) => {
+  console.log(`Server Listening on ${url}`);
+});
